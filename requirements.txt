@@ -1,3 +1,4 @@
-pytest
-flask
+Flask
 gunicorn
+Bootstrap-Flask
+requests
