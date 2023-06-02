@@ -6,7 +6,7 @@
 </center>
 <center>
 <form method="POST" action="">
-    <select class="form-control form-control-lg" name="year" id="view" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onchange="this.form.submit()" style="width: 50%">
+    <select class="form-control form-control-lg" name="year" id="view" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onchange="this.form.submit()" style="width: auto">
         {% for year in years %}
         <option value="{{ year }}" {% if year == default_year %} selected {% endif %}{% if year == current_year %}class="current_year"{% endif %}>{{ year }}</option>
         {% endfor %}
