@@ -4,17 +4,18 @@
 <center>
 <a href="{{ url_for('index.v_index') }}" style="text-decoration: none; color: black;"><font size="14">Röda dagar</a></font>
 </center>
+<br>
 <center>
+
 <form method="POST" action="">
     <select class="form-control form-control-lg" name="year" id="view" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onchange="this.form.submit()" style="width: auto">
         {% for year in years %}
         <option value="{{ year }}" {% if year == default_year %} selected {% endif %}{% if year == current_year %}class="current_year"{% endif %}>{{ year }}</option>
         {% endfor %}
     </select>
- <!--   <input class="btn btn-primary" type="submit" value="submit" name="year"/>-->
 </form>
 </center>
-
+<br>
 <table class="table table-striped table-bordered table-hover mx-auto" id="sortTable">
     <tr> 
         <th> Datum </th> 

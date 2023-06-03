@@ -26,7 +26,4 @@ def other_errors(e):
 [app.register_error_handler(error, other_errors) for error in [400, 403, 410, 500]]
 
 
-app.config['TEMPLATES_AUTO_RELOAD'] = True      # autoloads gui if template files change, mostly for development
 app.config['BOOTSTRAP_SERVE_LOCAL'] = True      # makes sure we don't go online for bootstrap but uses servers files
-
-
