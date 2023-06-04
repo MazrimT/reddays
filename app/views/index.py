@@ -20,7 +20,9 @@ def get_days(year, show_weekend=False):
             "holiday": day['helgdag'] if "helgdag" in day else "",
             "day_of_week": int(day['dag i vecka']),
             "weekday": day['veckodag'],
-            "week": day['vecka']
+            "week": day['vecka'],
+            "flag": True if day['flaggdag'] else False,
+            "flag_reason": day['flaggdag']
         }
         for day in days
     ]
@@ -44,6 +46,8 @@ def v_index():
     days = get_days(year, show_weekend)
 
     has_none_red = True if False in [day['red'] for day in days] else False
+
     
+
     return render_template('index.html', days=days, default_year=year, current_year=current_year, years=years, show_weekend=show_weekend, has_none_red=has_none_red)
     

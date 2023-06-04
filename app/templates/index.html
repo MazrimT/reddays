@@ -22,17 +22,20 @@
 <br>
 <table class="table table-striped table-bordered table-hover mx-auto" id="sortTable">
     <tr> 
+        <th> Vecka </th>
         <th> Datum </th> 
         <th> Veckodag </th>
         <th> Helgdag </th> 
     </tr>
 {% for day in days %}
     <tr>
+        <td>{{ day.week }}</td>
         <td>{{ day.date }}</td>
         <td>{{ day.weekday }}</td>
-        <td>{{ day.holiday }}{% if not day.red %}*{% endif %}</td>
+        <td>{{ day.holiday }}{% if not day.red %} *{% endif %}{% if day.flag %} <img src="{{ url_for('static', filename='flagga_small.gif') }}" title="{{ day.flag_reason }}" alt="{{ day.flag_reason }}" width="15" height="10">{% endif %}</td>
     </tr>
 {% endfor %}
+
 </table>
 {% if has_none_red %}<font size="2px">* ej lagstadgad svensk helgdag men arbetsfri dag på många arbetsplatser och kollektivavtal.</font>{% endif %}
 <br>
