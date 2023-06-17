@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
     <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CC0CZ4VN6V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CC0CZ4VN6V');
+    </script>        
         {% block head %}
             <!-- Required meta tags -->
             <meta charset="utf-8">
@@ -9,7 +18,7 @@
             {% block styles %}
                 <!-- Bootstrap CSS -->
                 {{ bootstrap.load_css() }}
-                <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+                <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
             {% endblock %}
 
             <title>Röda dagar</title>
