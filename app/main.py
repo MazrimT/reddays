@@ -2,19 +2,15 @@ from flask import Flask
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
 
-
+# views
+from  app.views.index import index
 
 app = Flask(__name__)
 
 bootstrap = Bootstrap5(app)
 
-
-views = ['index']
-# import all views
-for view in views: globals()[view] = getattr(__import__(f"app.views.{view}", fromlist=[view]), view)
-
-# register blueprints for all views the views in the app
-[app.register_blueprint(globals()[view]) for view in views]
+# register views
+app.register_blueprint(index)
 
 ### error handlers ###
 def page_not_found(e):
@@ -26,4 +22,4 @@ def other_errors(e):
 [app.register_error_handler(error, other_errors) for error in [400, 403, 410, 500]]
 
 
-app.config['BOOTSTRAP_SERVE_LOCAL'] = True      # makes sure we don't go online for bootstrap but uses servers files
+app.config['BOOTSTRAP_SERVE_LOCAL'] = True
