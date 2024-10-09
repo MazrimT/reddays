@@ -17,15 +17,15 @@
       Dölj veckoslut
     </label>
 
-</form>  
+</form>
 
 <br>
 <table class="table table-striped table-bordered table-hover mx-auto" id="sortTable">
-    <tr> 
+    <tr>
         <th> Vecka </th>
-        <th> Datum </th> 
+        <th> Datum </th>
         <th> Veckodag </th>
-        <th> Helgdag </th> 
+        <th> Helgdag </th>
     </tr>
 {% for day in days %}
     <tr>
@@ -40,7 +40,28 @@
 {% if has_none_red %}<font size="2px">* ej lagstadgad svensk helgdag men arbetsfri dag på många arbetsplatser och kollektivavtal.</font>{% endif %}
 <br>
 <br>
-<a href="https://rkrattsbaser.gov.se/sfst?bet=1989:253" target=”_blank”>Lag om allmänna helgdagar</a>
+
+<h4>Klämdagar</h4>
+<table class="table table-striped table-bordered table-hover mx-auto" id="sortTable">
+    <tr>
+        <th> Vecka </th>
+        <th> Datum </th>
+        <th> Veckodag </th>
+        <th> Typ* </th>
+        <th> Orsak </th>
+    </tr>
+{% for day in squeeze_days %}
+    <tr>
+        <td>{{ day.week }}</td>
+        <td>{{ day.date }}</td>
+        <td>{{ day.weekday }}</td>
+        <td>{{ day.squeeze_day_type }}</td>
+        <td>{{ day.squeeze_day_reasons }} </td>
+    </tr>
+{% endfor %}
+</table>
+<font size="2px">* Om typ är Enkel så är dagen före och efter en arbetsfri dag. Om Dubbel så är det två efterföljande arbetsdagar med arbetsfria dagar före och efter</font>
+<br>
 <br>
 <br>
 </center>
