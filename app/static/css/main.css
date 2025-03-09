@@ -1,13 +1,19 @@
+body {
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
 pre, code {
     white-space: pre;
     background-color: #f8f8f1;
 }
+
 table {
     width: auto !important;
     table-layout: auto !important;
 }
+
 .current_year {
-    background-color: #dbdbda;
+    background-color: #00d9ff;
 }
 footer {
     position: fixed;
@@ -15,7 +21,14 @@ footer {
     left: 0px;
     right: 0px;
     width: 100%;
-    height: auto;   
+    height: auto;
     font-size: 12px;
-    background-color: white;
+    background-color: background;
+}
+
+.theme-btn {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Sticks to the right */
+    z-index: 1000; /* Keeps it above other content */
 }

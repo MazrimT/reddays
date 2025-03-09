@@ -1,13 +1,12 @@
-from flask import Flask
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap5
+#from flask_bootstrap import Bootstrap5
 
 # views
 from  app.views.index import index
 
 app = Flask(__name__)
 
-bootstrap = Bootstrap5(app)
+#bootstrap = Bootstrap5(app)
 
 # register views
 app.register_blueprint(index)
